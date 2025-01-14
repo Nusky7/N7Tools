@@ -15,7 +15,7 @@
 
 ###
 
-<p align="left">★ <b>Modern and Responsive UI:</b> Designed with Tailwind CSS for a sleek and adaptable user experience.<br>★ <b>Powerful Backend:</b> Built with Node.js and Express to ensure efficient and scalable operations.<br>★ <b>Simple Setup:</b> Easy to run locally with minimal configuration required.<br>★ <b>Easy to run locally</b> with minimal setup.</p>
+<p align="left">★ <b>Modern and Responsive UI:</b> Designed with Tailwind CSS for a sleek and adaptable user experience.<br>★ <b>Powerful Backend:</b> Built with Node.js and Express to ensure efficient and scalable operations.<br>★ <b>Simple Setup:</b> Easy to run locally with minimal configuration required. 
 
 ###
 
