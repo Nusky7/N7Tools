@@ -1,0 +1,13 @@
+@font-face {
+    font-family: "4a473b6eab6ec1491f9a53b66d69c583";
+    src: url("4a473b6eab6ec1491f9a53b66d69c583.eot"); /* IE9 */
+    src: url("4a473b6eab6ec1491f9a53b66d69c583.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("4a473b6eab6ec1491f9a53b66d69c583.woff2") format("woff2"), /* chrome 36+, firefox 39+,iOS 10+, Android 67+ */
+    url("4a473b6eab6ec1491f9a53b66d69c583.woff") format("woff"), /* chrome, firefox */
+    url("4a473b6eab6ec1491f9a53b66d69c583.ttf") format("truetype"), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+    url("4a473b6eab6ec1491f9a53b66d69c583.svg#4a473b6eab6ec1491f9a53b66d69c583") format("svg"); /* iOS 4.1- */
+    font-style: normal;
+    font-weight: normal;
+}
+
+

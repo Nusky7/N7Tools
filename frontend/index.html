@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Herramienta de conversión de imágenes, fuentes y vídeos online: PNG, JPEG, WEBP, TTF, OTF, WOFF, WOFF2, MP3, MP4."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="N7Studio" />
+    <link href="output.css" rel="stylesheet" />
+    <!-- <link href="dist/output.css" rel="stylesheet" /> -->
+    <!-- Favicon -->
+    <link rel="icon" href="../favicon-16x16.png" sizes="32x32" type="image/png" /> 
+    <link rel="icon" href="../favicon-32x32.png" sizes="48x48" type="image/png" /> 
+    <link rel="icon" href="../android-chrome-192x192.png" sizes="48x48" type="image/png" /> 
+    <link rel="icon" href="../android-chrome-512x512.png" sizes="48x48" type="image/png" />
+    <link rel="manifest" href="../site.webmanifest" />
+
+    <title>N7Tools | Media Conversion</title>
+  </head>
+  <body class="bg-opacity-custom text-white font-sans">
+    <!-- Header principal -->
+    <header class="header-bkg bg-neutral-900">
+      <div class="flex items-center justify-between p-2 mr-6" >
+        <!-- Logo y Título -->
+        <div class="header flex items-center">
+            
+          <button onclick="window.location.reload();" class="logo mx-2 cursor-pointer p-0 border-none bg-transparent">
+            <img
+              src="../img/n7s.webp"
+              width="87px"
+              height="87px"
+              alt="logo"
+            />
+          </button>
+          <h1 class="text-2xl font-bold text-zinc-200 ml-1 font-pike">
+            <span class="text-fuchsia-700">N</span
+            ><span class="text-orange-500">7</span
+            ><span class="text-emerald-400">\</span>Tools
+          </h1>
+        </div>
+
+        
+        <!-- Botones -->
+        <div class="bts-container flex space-x-3">
+          <div class="relative group flex">
+            <!-- Botón 1 -->
+            <button
+              id="donateBtn"
+              class="btn-donate header-btn w-12 h-12 flex items-center justify-center bg-orange-800 rounded-full transition hover:scale-110"
+            >
+              <span id="coffee-txt"
+                class="coffee-btn absolute left-[-120px] mt-3 text-orange-600 text-base font-semibold animate-bounce pr-4 py-1 rounded opacity-0 group-hover:opacity-100 group-hover:left-[-140px] transition-all duration-300">
+                Invítame a Café ☕︎ &nbsp;
+              </span>
+             <svg viewBox="0 0 1024 1024" width="40px" height="40px" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M509.75744 514.75456m-494.11072 0a494.11072 494.11072 0 1 0 988.22144 0 494.11072 494.11072 0 1 0-988.22144 0Z" fill="#8D3F07"></path><path d="M509.75744 170.14784c-169.84576 0-309.92896 128.0768-332.97408 294.4H103.22944a48.10752 48.10752 0 0 0 0 96.21504h73.55392c23.04512 166.3232 163.12832 294.4 332.97408 294.4 185.93792 0 336.67584-153.344 336.67584-342.50752 0-189.1584-150.7328-342.50752-336.67584-342.50752z" fill="#FFFFFF"></path><path d="M509.75744 512.65536m-255.04256 0a255.04256 255.04256 0 1 0 510.08512 0 255.04256 255.04256 0 1 0-510.08512 0Z" fill="#BF5710"></path><path d="M688.51712 331.392c-0.6656-0.63488-1.40288-1.15712-2.0736-1.78688l-351.77984 368.98816c0.66048 0.64 1.21344 1.35168 1.88416 1.98656 101.94944 97.19296 263.38304 93.3376 360.58112-8.61184 97.19296-101.94432 93.3376-263.38304-8.61184-360.576z" fill="#8D3F07"></path></g></svg>
+            </button>
+
+        <!-- Modal de opciones de donación -->
+        <div id="donationModal" class="fixed flex hidden inset-0 bg-stone-900 bg-opacity-60 justify-center items-center z-50">
+          <div class="bg-neutral-800 p-7 rounded-lg w-90">
+            <div class="w-full flex items-center align-middle justify-between">
+              <h2 id="donation-title" class="font-semibold mb-4 text-rose-100 text-xl animate-glowText whitespace-nowrap">☕ Elige una opción</h2>
+              <button id="closeModal" class="w-8 h-8 mb-4 hover:animate-spin hover:bg-transparent rounded-lg bg-rose-500 bg-opacity-20">❌</button>
+            </div>
+
+            <div class="flex items-center justify-between pr-2">
+            <div>
+              <button id="paypalBtn" class="btn-donate-modal w-20 bg-blue-600 hover:bg-blue-500 hover:scale-110 font-semibold">PayPal</button>
+              <button id="stripeBtn" class="btn-donate-modal w-20 bg-purple-600 hover:bg-purple-500 hover:scale-110 font-semibold">Stripe</button>
+              <button id="kofiBtn" class="btn-donate-modal w-20 bg-pink-600 hover:bg-pink-500 hover:scale-110 font-semibold">Ko-fi</button>
+              <button id="copyBtcBtn" class="btn-donate-modal w-20 text-orange-00 bg-gray-700 hover:bg-gray-600 hover:scale-110 font-semibold">
+              <div class="flex">
+                <img src="../img/bitcoin.png" alt="btc" width="20px" height="auto" class="mx-auto">
+              </div>
+             <span id="btext">Copiar</span> 
+            </button>
+            </div>
+
+           <!-- Código QR de Bitcoin -->
+            <div id="btcQrCode" class="mt-0 pl-6 mb-4">
+              <h3 class="font-semibold mb-2 text-center text-sm"><span id="donate-with">Donar con</span> <span class="font-pix text-orange-400">Bitcoin</span></h3>
+              <!-- Generar QR de la dirección BTC -->
+              <img src="https://api.qrserver.com/v1/create-qr-code/?data=bitcoin:bc1qzn5dj9vlcwhc0x502yeev5w4uuml34rqc6y6u9&size=200x200" alt="Código QR Bitcoin" class="rounded-lg" />         
+            </div>
+          </div>
+          </div>
+        </div>
+          </div>
+          <!-- Botón Portfolio -->
+          <div class="relative group flex ">
+            <a href="https://nusky7studio.es" rel="noopener noreferrer" title="Portfolio" target="_blank"
+              class="header-btn w-12 h-12 flex items-center justify-center bg-fuchsia-700 rounded-full hover:bg-fuchsia-500 transition">
+              <img src="../img/image.webp" alt="mySite"  width="42px"  height="42px"  class="pointer-events-none"/>
+            </a>
+            <span
+              class="header-btn absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full text-fuchsia-400 text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">
+              N7Studio</span>
+          </div>
+          <!-- Botón LinkedIn -->
+          <div class="relative group flex">
+            <a href="https://es.linkedin.com/in/alba-tolosa-bonora-792b7a291" rel="noopener noreferrer" title="LinkedIn" target="_blank"
+              class="header-btn w-12 h-12 flex items-center justify-center bg-cyan-300 rounded-full hover:bg-cyan-400 transition">
+              <svg fill="#000000" width="43px" height="43px" xmlns="http://www.w3.org/2000/svg" viewBox="-143 145 512 512"><path d="M113,145c-141.4,0-256,114.6-256,256s114.6,256,256,256s256-114.6,256-256S254.4,145,113,145z M272.8,560.7c-20.8,20.8-44.9,37.1-71.8,48.4c-27.8,11.8-57.4,17.7-88,17.7c-30.5,0-60.1-6-88-17.7c-26.9-11.4-51.1-27.7-71.8-48.4c-20.8-20.8-37.1-44.9-48.4-71.8C-107,461.1-113,431.5-113,401s6-60.1,17.7-88c11.4-26.9,27.7-51.1,48.4-71.8c20.9-20.8,45-37.1,71.9-48.5C52.9,181,82.5,175,113,175s60.1,6,88,17.7c26.9,11.4,51.1,27.7,71.8,48.4c20.8,20.8,37.1,44.9,48.4,71.8c11.8,27.8,17.7,57.4,17.7,88c0,30.5-6,60.1-17.7,88C309.8,515.8,293.5,540,272.8,560.7z"></path><rect x="-8.5" y="348.4" width="49.9" height="159.7"></rect><path d="M15.4,273c-18.4,0-30.5,11.9-30.5,27.7c0,15.5,11.7,27.7,29.8,27.7h0.4c18.8,0,30.5-12.3,30.4-27.7C45.1,284.9,33.8,273,15.4,273z"></path><path d="M177.7,346.9c-28.6,0-46.5,15.6-49.8,26.6v-25.1H71.8c0.7,13.3,0,159.7,0,159.7h56.1v-86.3c0-4.9-0.2-9.7,1.2-13.1c3.8-9.6,12.1-19.6,27-19.6c19.5,0,28.3,14.8,28.3,36.4v82.6H241v-88.8C241,369.9,213.2,346.9,177.7,346.9z"></path></svg>
+            </a>
+            <span
+              class="header-btn absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full text-cyan-400 text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">
+              LinkedIn</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="container mx-auto p-7 w-full m-0">
+      <!-- Contenedor principal -->
+      <div class="first-container flex md:flex-row gap-6 justify-center">
+        <!-- Sección de conversión de imágenes -->
+        <div
+          class="bg-fuchsia-950 p-6 rounded shadow-md w-full h-full md:w-1/2"
+        >
+          <h2 class="text-2xl font-semibold mb-4 text-center font-pike">
+            <span class="text-fuchsia-200">Conversión de</span> Imágenes
+          </h2>
+          <!-- Entrada de archivo de imagen -->
+          <label for="fileInput" class="block text-lg font-semibold mb-2"
+            >Sube tus imágenes</label
+          >
+          <input
+            id="fileInput"
+            type="file"
+            accept="image/*"
+            multiple
+            class="block w-full mb-4 p-2 bg-stone-600 text-white rounded focus:outline-none focus:ring-2 focus:ring-fuchsia-500"
+          />
+
+          <!-- Selección de formato de salida -->
+          <label for="formatSelect" class="block text-lg font-semibold mb-2"
+            >Formato de salida:</label
+          >
+          <select
+            id="formatSelect"
+            class="block w-full mb-4 p-2 bg-stone-600 text-white rounded focus:outline-none focus:ring-2 focus:ring-fuchsia-500"
+          >
+            <option value="jpeg">JPEG</option>
+            <option value="png">PNG</option>
+            <option value="webp">WEBP</option>
+          </select>
+
+          <!-- Botón para convertir -->
+          <button
+            id="convertButton"
+            class="w-full bg-fuchsia-800 text-white py-2 rounded hover:bg-fuchsia-700 focus:outline-none focus:ring-2 focus:ring-fuchsia-500"
+          >
+            Convertir Imagen
+          </button>
+
+          <!-- Barra de progreso -->
+          <div id="progressBarContainer" class="hidden mt-4">
+            <div class="relative w-full h-4 bg-gray-700 rounded">
+              <div
+                id="progressBar"
+                class="absolute left-0 top-0 h-4 bg-green-500 rounded"
+                style="width: 0%"
+              ></div>
+            </div>
+            <p id="progressText" class="text-sm text-center mt-2 text-gray-300">
+              Procesando...
+            </p>
+          </div>
+
+          <!-- Contenedor para los enlaces de descarga -->
+          <div id="downloadLinksContainer" class="grid gap-4 mt-4"></div>
+        </div>
+
+        <!-- Sección de conversión de fuentes -->
+        <div class="bg-teal-950 p-6 rounded shadow-md w-full h-full md:w-1/2">
+          <h2 class="text-2xl font-semibold mb-4 text-center font-pike">
+            <span class="text-teal-100">Conversión de</span> Fuentes
+          </h2>
+          <!-- Entrada de archivo de fuente -->
+          <label for="fontInput" class="block text-lg font-semibold mb-2"
+            >Sube tu archivo de fuente</label
+          >
+          <input
+            id="fontInput"
+            type="file"
+            accept=".ttf, .otf, .woff, .woff2"
+            class="block w-full mb-4 p-2 bg-stone-600 text-white rounded focus:outline-none focus:ring-2 focus:ring-teal-500"
+          />
+
+          <!-- Selección de formato de salida -->
+          <label for="fontFormatSelect" class="block text-lg font-semibold mb-2"
+            >Formato de salida:</label
+          >
+          <select
+            id="fontFormatSelect"
+            class="block w-full mb-4 p-2 bg-stone-600 text-white rounded focus:outline-none focus:ring-2 focus:ring-teal-500">
+            <option value="woff">WOFF</option>
+            <option value="woff2">WOFF2</option>
+          </select>
+
+          <!-- Botón para convertir -->
+          <button
+            id="convertFontButton"
+            class="w-full bg-teal-800 text-white py-2 rounded hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500">
+            Convertir Fuente
+          </button>
+
+          <!-- Barra de progreso -->
+          <div id="textProgressBarContainer" class="hidden mt-4">
+            <div class="relative w-full h-4 bg-gray-700 rounded">
+              <div
+                id="textProgressBar"
+                class="absolute left-0 top-0 h-4 bg-green-500 rounded"
+                style="width: 0%"
+              ></div>
+            </div>
+            <p
+              id="textProgressText"
+              class="text-sm text-center mt-2 text-gray-300">
+              Procesando...
+            </p>
+          </div>
+
+          <!-- Contenedor para los enlaces de descarga -->
+          <div id="fontDownloadLinksContainer" class="grid gap-4 mt-4"></div>
+        </div>
+      </div>
+
+      <!-- Sección de conversión de videos -->
+      <div
+        class="bg-rose-950 p-6 rounded shadow-md w-full h-full md:w-3/4 mx-auto mt-6"
+      >
+        <h2
+          class="text-2xl font-semibold mb-4 text-center text-white font-pike"
+        >
+          <span class="text-rose-200">Conversión de</span> Videos
+        </h2>
+        <form id="videoForm" class="space-y-4">
+          <!-- Entrada de URL de YouTube -->
+          <div class="flex flex-col">
+            <label for="url" class="text-lg font-semibold text-white mb-2">URL de YouTube:
+              </label>
+            <input
+              type="url"
+              id="url"
+              name="url"
+              required
+              class="p-2 bg-stone-600 text-white rounded focus:outline-none focus:ring-2 focus:ring-rose-500"/>
+          </div>
+
+          <!-- Selección de formato -->
+          <div class="flex flex-col">
+            <label for="format" class="text-lg font-semibold text-white mb-2"
+              >Formato de salida:
+            </label >
+            <select
+              id="format"
+              name="format"
+              required
+              class="p-2 bg-stone-600 text-white rounded focus:outline-none focus:ring-2 focus:ring-rose-500">
+              <option value="mp3">MP3</option>
+              <option value="mp4">MP4</option>
+            </select>
+          </div>
+
+          <!-- Botón para convertir -->
+          <div class="flex justify-center">
+            <button
+              type="submit"
+              class="w-full bg-rose-800 text-white py-2 rounded hover:bg-rose-700 focus:outline-none focus:ring-2 focus:ring-rose-500">
+              Convertir Video
+            </button>
+          </div>
+        </form>
+
+        <!-- Barra de progreso -->
+        <div id="videoProgressBarContainer" class="hidden mt-4">
+          <div class="relative w-full h-4 bg-gray-700 rounded">
+            <div
+              id="videoProgressBar"
+              class="absolute left-0 top-0 h-4 bg-green-500 rounded"
+              style="width: 0%"
+            ></div>
+          </div>
+          <p
+            id="videoProgressText"
+            class="text-sm text-center mt-2 text-gray-300"
+          >
+            Procesando...
+          </p>
+        </div>
+
+        <!-- Contenedor para los enlaces de descarga -->
+        <div id="videoDownloadLinksContainer" class="grid gap-4 mt-4"></div>
+      </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/body-pix"></script>
+    <script type="module" src="imageConverter.js" defer></script>
+    <script type="module" src="videoConverter.js" defer></script>
+    <script type="module" src="fontConverter.js" defer></script>
+    <script type="module" src="donations.js" defer></script>
+  </body>
+</html>

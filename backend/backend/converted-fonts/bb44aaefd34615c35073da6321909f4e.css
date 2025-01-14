@@ -1,0 +1,13 @@
+@font-face {
+    font-family: "bb44aaefd34615c35073da6321909f4e";
+    src: url("bb44aaefd34615c35073da6321909f4e.eot"); /* IE9 */
+    src: url("bb44aaefd34615c35073da6321909f4e.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("bb44aaefd34615c35073da6321909f4e.woff2") format("woff2"), /* chrome 36+, firefox 39+,iOS 10+, Android 67+ */
+    url("bb44aaefd34615c35073da6321909f4e.woff") format("woff"), /* chrome, firefox */
+    url("bb44aaefd34615c35073da6321909f4e.ttf") format("truetype"), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+    url("bb44aaefd34615c35073da6321909f4e.svg#bb44aaefd34615c35073da6321909f4e") format("svg"); /* iOS 4.1- */
+    font-style: normal;
+    font-weight: normal;
+}
+
+

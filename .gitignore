@@ -1,0 +1,33 @@
+# Node.js
+node_modules/
+
+# Dependencias
+package-lock.json
+yarn.lock
+
+# Archivos de construcción de producción
+/frontend/dist
+/dist/
+/build/
+
+# Archivos de configuración de editor
+.vscode/
+/.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Archivos temporales
+*.log
+*.tmp
+
+# Archivos generados por Tailwind CSS
+public/css/*
+public/js/*
+!public/css/tailwind.css
+
+# Archivos de caché
+.cache/
+.parcel-cache/
+
+# Cookies
+/backend/cookies.txt

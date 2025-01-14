@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body{
+  margin: 0;
+  overflow-x: hidden;
+}
+
+@font-face {
+  font-family: 'pix'; 
+  src: url('/fonts/30.woff2') format('woff2'), 
+       url('/fonts/30.woff') format('woff'),   
+       url('/fonts/30.ttf') format('truetype');
+       font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pike';
+    src: url('/fonts/pike.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  .bg-opacity-custom {
+    background: url('/img/bkg4.webp');
+    background-size: fill;
+    background-position: center;
+    overflow-x: hidden; 
+  }
+
+  .header-btn:hover{
+    transform: scale(1.2) ;
+  }
+
+/* animacion puntos Convirtiendo Video... */
+  #progressText {
+    display: inline-block;
+  }
+  
+  .dot {
+    display: inline-block;
+    animation: dots 1.5s steps(1) infinite;
+  }
+  
+  .dot1 {
+    animation-delay: 0s;
+  }
+  
+  .dot2 {
+    animation-delay: 0.5s;
+  }
+  
+  .dot3 {
+    animation-delay: 1s;
+  }
+  
+  @keyframes dots {
+    0% { content: '.'; }
+    33% { content: '..'; }
+    66% { content: '...'; }
+    100% { content: ''; }
+  }
+
+
+  /* Modal donaciones */
+
+.btn-donate-modal {
+    padding: 10px 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: block;
+    text-decoration: none;
+}
+
+
+
+@media (max-width: 540px){
+  html, body{
+    margin: 0 auto !important;
+  }
+  .logo{
+    margin-top: 9% !important;
+  }
+  h1{
+    font-size: 1.8rem !important;
+    margin-top: -1.8rem !important;
+  }
+  .bts-container{
+    margin-top: -1.5rem !important;
+    margin-left: 0;
+  }
+  .header {
+    margin-bottom: 5rem;
+  }
+  .header-bkg{
+    max-height: 9rem;
+  }
+container{
+  display: flex !important;
+  flex-direction: column !important;
+}
+.relative.group{
+  padding-top: 9% !important;
+  margin-left: -50%;
+  justify-content: left !important;
+  /* padding-bottom: 8%; */
+}
+.bg-opacity-custom {
+    background-size: cover;
+    background-position: center;
+  }
+
+
+}
